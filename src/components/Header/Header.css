@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px;
+  background-color: rgb(191, 238, 222);
+  flex-wrap: wrap;
+}
+
+.logo-image {
+  width: 70px;
+  height: 70px;
+}
+
+.theme-option {
+  margin-left: 20px;
+}
+
+.menu-button {
+  background-color: rgb(19, 109, 114);
+  color: white;
+  font-weight: bolder;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-left: 10px;
+}
