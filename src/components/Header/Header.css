@@ -9,12 +9,33 @@
 }
 
 .logo-image {
-  width: 70px;
-  height: 70px;
+  width: 100px;
+  height: 100px;
 }
 
 .theme-option {
   margin-left: 20px;
+}
+
+.theme-dark {
+  background-color: #444;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.theme-light {
+  background-color: rgb(174, 255, 228);
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.theme-button {
+  background-color: rgb(19, 109, 114);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin-right: 15px;
+  font-size: 30px;
 }
 
 .menu-button {

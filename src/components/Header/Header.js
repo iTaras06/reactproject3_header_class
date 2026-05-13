@@ -25,36 +25,45 @@ export class Theme extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      theme: 'light'
-    };
-
+    this.state = {theme: 'light', icon: '🌙'};
     this.setLight = this.setLight.bind(this);
     this.setDark = this.setDark.bind(this);
+    this.toggleTheme = this.toggleTheme.bind(this);
   }
 
   setLight() {
-    this.setState({ theme: 'light' });
+    this.setState({theme: 'light'});
     alert('СВЕТЛАЯ ТЕМА');
   }
 
   setDark() {
-    this.setState({ theme: 'dark' });
+    this.setState({theme: 'dark'});
     alert('ТЕМНАЯ ТЕМА');
   }
-  render() {
+
+toggleTheme() {
+    let curTheme = (this.state.theme === 'light') ? 'dark' : 'light';
+    let curIcon = (this.state.icon === '☀️') ? '🌙' : '☀️';
+
+    this.setState({theme: curTheme, icon: curIcon});
+  }
+
+render() {
     return (
-      <div>
+      <div className={this.state.theme=='dark' ? 'theme-dark' : 'theme-light'}>
+        <button onClick={this.toggleTheme} className="theme-button">
+          {this.state.icon}
+        </button>
         <label>
           <input type="radio" name="theme"
-            checked={this.state.theme == 'light'}
+            checked={this.state.theme=='light'}
             onChange={this.setLight}
           /> ☀️
         </label>
 
         <label className="theme-option">
           <input type="radio" name="theme"
-            checked={this.state.theme == 'dark'}
+            checked={this.state.theme=='dark'}
             onChange={this.setDark}
           /> 🌙
         </label>
@@ -73,7 +82,6 @@ export class ButItem extends React.Component {
   }
 }
 
-
 export class ButList extends React.Component {
   render() {
     return (
@@ -83,7 +91,6 @@ export class ButList extends React.Component {
     );
   }
 }
-
 
 export class Header extends React.Component {
   render() {
@@ -97,6 +104,5 @@ export class Header extends React.Component {
     );
   }
 }
-
 
 export default Header;
